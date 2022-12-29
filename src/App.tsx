@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*O react tem um importante papel de componentização para
+tornar o código mais limpo e reutilizável*/
+
+import { Card } from "./components/Card";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello world!
+      <div>
+        <h1>Card</h1>
+        <p>Parágrafo</p>
+      </div>
+      {/* Chama o componente Card */}
+      <Card />
     </div>
   );
 }
