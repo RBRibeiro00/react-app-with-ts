@@ -1,8 +1,15 @@
 /*O react tem um importante papel de componentização para
 tornar o código mais limpo e reutilizável*/
 
-import { Card } from "./components/Card";
 import { Layout } from "./components/Layout";
+import styled from 'styled-components';
+
+// Componentizando o css
+const Box = styled.div`
+  background-color: orange;
+  border-radius: 25px;
+  padding-left: 15px;
+`
 
 function App() {
   return (
@@ -11,20 +18,21 @@ function App() {
 
     <>  {/* pode usar uma tag vazia também: <></> representa o React.Fragment */}
       <Layout>
-        Hello world!
-        {/* Chama o componente Card */}
-        <Card
-          id={1}
-          paragraph='Typescript'
-          details='TS para frontend e backend'
-        />
-        <Card
-          id={2}
-          paragraph='HTML'
-          details='HTML para frontend '
-        />
-        <Card id={3} paragraph='SQL' details='SQL para banco de dados'
-        />
+        <Box>
+          <h1>Faça o login</h1>
+        </Box>
+        <label htmlFor='emailInput'>
+          Email
+        </label>
+        <input id='emailInput' type='email' />
+
+        <label htmlFor='passwordInput'>
+          Senha
+        </label>
+        <input id='passwordInput' type='password' />
+        <button>
+          Entrar
+        </button>
       </Layout>
     </>
   );
