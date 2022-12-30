@@ -2,13 +2,10 @@
 tornar o código mais limpo e reutilizável*/
 
 import {
-  ChakraProvider,
-  Input,
-  Box,
-  Center,
-  Button
+  ChakraProvider
 } from "@chakra-ui/react";
-import { login } from "./services/login";
+import { Layout } from "./components/Layout";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -17,20 +14,9 @@ function App() {
 
     <>  {/* pode usar uma tag vazia também: <></> representa o React.Fragment */}
       <ChakraProvider>
-        <Box minHeight='100vh' backgroundColor='#336EFF' padding='25px'>
-          <Box backgroundColor='#FFFFFF' borderRadius='25px' padding='15px'>
-            <Center>
-              <h1>Login</h1>
-            </Center>
-            <Input placeholder="Email" />
-            <Input placeholder="Password" />
-            <Center>
-              <Button onClick={login} colorScheme='teal' size='sm' width='100%'>
-                Sign in
-              </Button>
-            </Center>
-          </Box>
-        </Box>
+          <Layout>
+            <Home />
+          </Layout>
       </ChakraProvider>
     </>
   );

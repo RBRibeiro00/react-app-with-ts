@@ -1,19 +1,12 @@
 // Todo arquivo ts + html deve ser .tsx
 
-interface ICard {
-    id: number,
-    paragraph: string,
-    details: string
-}
+import { Box } from "@chakra-ui/react"
 
 // Todo componente é uma função
-export const Card = ({ id, paragraph, details }: ICard) => {
-    console.log(id)
+export const Card = ({ children }: any) => {
     return (
-        <div>
-            <h1>Card {id}</h1>
-            <p>{paragraph}</p>
-            <p>{details}</p>
-        </div>
+        <Box backgroundColor="#FFFFFF" borderRadius="25px" padding="15px">
+            {children}
+        </Box>
     )
 } 
