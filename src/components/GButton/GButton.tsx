@@ -9,7 +9,7 @@ interface IButton {
 // Todo componente é uma função
 export const GButton = ({ onClick }: IButton) => {
     return (
-        <Button onClick={onClick} className='signIn' backgroundColor='#38F295'>Sign in</Button>
+        <Button onClick={onClick} className='signIn'>Sign in</Button>
     )
 } 
 
