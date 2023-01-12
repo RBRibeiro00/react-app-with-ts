@@ -6,6 +6,7 @@ import { AppContext } from "../components/AppContext";
 import { Card } from "../components/Card";
 import GButton from "../components/GButton/GButton";
 import { login } from "../services/login";
+import { changeLocalStorage } from "../services/storage";
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
             alert('Email inválido.')
         } else{
             setIsLoggedIn(true)
+            changeLocalStorage({login:true})
             navigate('/conta/1')
         }
     }

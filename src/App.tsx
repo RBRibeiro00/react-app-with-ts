@@ -6,9 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import { AppContextProvider } from "./components/AppContext";
 import { Layout } from "./components/Layout";
 import MainRoutes from "./routes";
+import { createLocalStorage, getAllLocalStorage } from "./services/storage";
 
 
 function App() {
+
+  !getAllLocalStorage() && createLocalStorage()
+
   return (
     /* <React.fragment></React.fragment> é usado para não criar tags sem funcionalidade relevante,  
     por exemplo uma div para agrupar outras divs, economizando processamento */
