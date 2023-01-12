@@ -9,9 +9,9 @@ const MainRoutes = () => {
     const { isLoggedIn } = useContext(AppContext)
     return (
         <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={isLoggedIn ? <Conta /> : <Home />} />
             <Route path='/conta/:id' element={isLoggedIn ? <Conta /> : <Home />} />
-            <Route path='/infoconta' element={<ContaInfo />} />
+            <Route path='/infoconta' element={isLoggedIn ? <ContaInfo /> : <Home />} />
         </Routes>
     )
 }

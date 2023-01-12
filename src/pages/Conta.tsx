@@ -5,7 +5,7 @@ import { api } from "../api";
 import CardInfo from "../components/CardInfo";
 import { AppContext } from "../components/AppContext";
 
-interface UserData {
+export interface UserData {
     email: string,
     password: string,
     name: string,
@@ -16,10 +16,10 @@ interface UserData {
 const Conta = () => {
 
     const [userData, setUserData] = useState<null | UserData>()
-    const {id} = useParams()
+    const { id } = useParams()
     const navigate = useNavigate()
 
-    const {isLoggedIn} = useContext(AppContext)
+    const { isLoggedIn } = useContext(AppContext)
 
     //se não estiver logado, não irá navegar para a página de conta
     !isLoggedIn && navigate('/')
@@ -34,7 +34,7 @@ const Conta = () => {
 
     const currentData = new Date()
 
-    if(userData && id !== userData.id) {
+    if (userData && id !== userData.id) {
         navigate('/')
     }
 
@@ -49,6 +49,7 @@ const Conta = () => {
                                 <CardInfo mainContent={`Bem vindo(a) ${userData?.name}`} content={`${currentData.getDay()}/${currentData.getMonth()}/${currentData.getFullYear()} ${currentData.getHours()}:${currentData.getMinutes()}`} />
                                 <CardInfo mainContent={`Saldo`} content={`R$${userData?.balance}`} />
                             </>
+
                         )
                 }
             </SimpleGrid>

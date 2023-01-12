@@ -2,15 +2,16 @@ import { login } from "./login";
 
 describe('login', () => {
 
-    const mockEmail = 'romulo@gmail.com'
+    const mockEmail = 'romulo@email.com'
+    const mockPassword = '123456'
 
-    it('Deve exibir um alert com boas vindas, caso o email seja válido', async () => {
-        const response = await login(mockEmail)
+    it('Deve retornar true e redirecionar para a página da conta, caso o email e a senha sejam válidos', async () => {
+        const response = await login(mockEmail, mockPassword)
         expect(response).toBeTruthy()
     })
 
-    it('Deve exibir um erro caso o email seja inválido', async() => {
-        const response = await login('email@invalido.com')
+    it('Deve exibir um alert caso o email ou a senha seja inválidos', async() => {
+        const response = await login('email@invalido.com', 'senhaInvalida')
         expect(response).toBeFalsy()
     })
 })

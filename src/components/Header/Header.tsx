@@ -9,6 +9,10 @@ export const Header = () => {
     const { isLoggedIn, setIsLoggedIn } = useContext(AppContext)
     const navigate = useNavigate()
 
+    const accountInfo = () => {
+        navigate('/infoconta')
+    }
+
     const logout = () => {
         changeLocalStorage({ login: false })
         setIsLoggedIn(false)
@@ -25,7 +29,9 @@ export const Header = () => {
             {
                 isLoggedIn &&
                 <>
-                    <Spacer /><Button color='black' onClick={() => logout()}>
+                    <Spacer />
+                    <Button backgroundColor='orange' color='black' onClick={() => accountInfo()}>Informações da conta</Button>
+                    <Button marginLeft='5px' color='black' onClick={() => logout()}>
                         Logout
                     </Button>
                 </>
