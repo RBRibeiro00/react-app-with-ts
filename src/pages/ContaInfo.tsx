@@ -31,8 +31,8 @@ const ContaInfo = () => {
                     <Text fontSize='xl' fontWeight='bold' >
                         Email: {userData?.email}
                     </Text>
-                    <Link to='/conta/1' >
-                            Ir para página principal
+                    <Link to='/conta/1' color="teal.500">
+                        Ir para página da conta
                     </Link>
                 </Card>
             </Box>
