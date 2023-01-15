@@ -32,7 +32,8 @@ const Conta = () => {
         getData()
     }, [])
 
-    const currentData = new Date()
+    const date = new Date()
+    let currentDate = ((date.getDate() )) + "/" + ((date.getMonth() + 1)) + "/" + date.getFullYear(); 
 
     if (userData && id !== userData.id) {
         navigate('/')
@@ -46,7 +47,7 @@ const Conta = () => {
                         (<Center><Spinner size='xl' color='white' /></Center>) :
                         (
                             <>
-                                <CardInfo mainContent={`Bem vindo(a) ${userData?.name}`} content={`${currentData.getDay()}/${currentData.getMonth()}/${currentData.getFullYear()} ${currentData.getHours()}:${currentData.getMinutes()}`} />
+                                <CardInfo mainContent={`Bem vindo(a) ${userData?.name}`} content={`${currentDate}`}/>
                                 <CardInfo mainContent={`Saldo`} content={`R$${userData?.balance}`} />
                             </>
 
